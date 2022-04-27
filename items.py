@@ -10,4 +10,10 @@ class War2022VmdItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     article_url = scrapy.Field()
-
+    article_uuid = scrapy.Field()
+    article_id = scrapy.Field()
+    article_link = scrapy.Field()
+    article_datetime = scrapy.Field()
+    article_title = scrapy.Field()
+    article_text = scrapy.Field()
+    article_author = scrapy.Field()
