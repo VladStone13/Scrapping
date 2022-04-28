@@ -9,9 +9,9 @@ def striphtml(data):
 
 def main():
     json_path = "C:\\Users\\Vlad\\scrapy2022\\src\\war2022_VMD\\war2022_VMD\\"
-    json_file = "comnewsarticles.json"
+    json_file = "carnegiearticles.json"
     json_data = []
-    os.mkdir(json_path + "comnews_plain_text")
+    os.mkdir(json_path + "carnegie_plain_text")
     with open(json_path+json_file) as json_fileopen:
         json_data = json.load(json_fileopen)
 
@@ -21,7 +21,7 @@ def main():
             article_text = striphtml(article_text)
             article_uuid = article['article_uuid']
 
-            with codecs.open(json_path+"comnews_plain_text/"+article_uuid+".txt", "w", "utf-8-sig") as temp:
+            with codecs.open(json_path+"carnegie_plain_text/"+article_uuid+".txt", "w", "utf-8-sig") as temp:
                 temp.write(article_text)
 
 if __name__== "__main__" :

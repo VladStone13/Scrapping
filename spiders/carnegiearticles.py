@@ -28,6 +28,6 @@ class CarnegieArticlesSpider(scrapy.Spider):
         item['article_uuid'] = hashlib.sha256(str(response.url).encode('utf-8')).hexdigest()
         item['article_title'] = response.xpath('//h1').extract()
 
-        item['article_text'] = "\n".join(response.xpath('//div[@class="article-body"]/p[@class="selectionShareable"]').extract())
+        item['article_text'] = "\n".join(response.xpath('//div[@class="article-body"]/p').extract())
 
         yield (item)
